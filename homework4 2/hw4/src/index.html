@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Список дел</title>
+   <link rel="stylesheet" href="css/normalize.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <script src="main.js" defer></script>
+</head>
+<body>
+   <section class="section">
+      <div class="g__container">
+         <div class="section-block">
+            <ul class="list">
+               <h2 class="title list-title">Список дел:</h2>
+               <!-- /.list-title -->
+               <li class="list-item">
+                  <span class="list-item__subtitle">Купить лошадь</span> 
+                  <a class="list-item__delete">&times;</a>
+                  <hr>
+                  <!-- /.list-item__subtitle -->
+                  <span class="list-item__text">По цене 300 т.р. за штуку</span> 
+                  <!-- /.list-item__text -->
+               </li>
+               <!-- /.list-item -->
+               <li class="list-item" >
+                  <span class="list-item__subtitle">Позвонить маме</span> 
+                  <a class="list-item__delete">&times;</a>
+                  <hr>
+                  <!-- /.list-item__subtitle -->
+                  <span class="list-item__text">Пригласить в кино</span> 
+                  <!-- /.list-item__text -->
+               </li>
+               <!-- /.list-item -->
+            </ul>
+            <!-- /.list -->
+            <form action="#" class="form">
+               <h2 class="title form-title">Добавить новое дело</h2>
+               <!-- /.form-title -->
+               <div class="form-block">
+                  <span class="form-subtitle">* Название</span>
+                  <!-- /.form-subtitle -->
+                  <textarea type="text" class="form-textarea" id="name"></textarea>
+                  <span class="form-subtitle">* Описание</span>
+                  <!-- /.form-subtitle -->
+                  <textarea type="text" class="form-textarea form-textarea__discription" id="discription"></textarea>
+                  <button class="form-button" type="submit">Добавить дело</button>
+               </div>
+            </form>
+            <!-- /.form -->
+         </div>
+         <!-- /.list-block -->
+      </div>
+      <!-- /.g__container -->
+   </section>
+   <!-- /.section -->
+
+</body>
+</html>

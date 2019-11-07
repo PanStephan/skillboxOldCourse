@@ -1,0 +1,15 @@
+.button-js {
+   display: block;
+   margin-top: 100px;
+   padding: 30px 60px;
+   cursor: pointer;
+   background-color: #431fc5;
+   color: #fff;
+   border-radius: 15px;
+   outline: none;
+   font-size: 17px;
+}
+.button-js:hover {
+   transform: scale(1.05);
+   transition: 0.5s ease-in-out;
+}

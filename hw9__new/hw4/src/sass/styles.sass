@@ -1,0 +1,88 @@
+body 
+   background-color: #f9f9f9
+   font-family: sans-serif
+
+hr 
+   background-color: #ebebeb
+   opacity: 0.4
+
+.section
+   margin: 65px auto
+   width: 1000px
+   &-block 
+      display: flex
+      justify-content: space-between
+
+.title
+   font-size: 21px
+   line-height: 54px
+   font-weight: 400
+   margin-bottom: 10px
+
+.list
+   margin-left: 0
+   padding-left: 0
+   &-item 
+      background-color: #fff
+      padding-bottom: 40px
+      margin: 0 20px 20px 0
+      width: 470px
+      list-style-type: none
+      &__subtitle
+         display: inline-block
+         margin-top: 20px
+         margin-left: 20px
+      &__text 
+         margin-left: 20px
+         color: #8993ad
+         font-size: 14px
+         line-height: 54px
+      &__delete 
+         display: inline-block
+         color: #ed879a  
+         margin-left: 20px
+         cursor: pointer
+      &__empty 
+         list-style-type: none
+         text-align: center
+         color: #8993ad  
+         display: none 
+         &__active 
+            display: block
+      &__slide
+         font-size: 10px
+         float: right 
+         margin-top: 20px
+         margin-right: 20px
+         cursor: pointer
+         &__active
+            transform: rotate(180deg)
+
+.form 
+   &-block
+      background-color: #fff
+      padding: 35px
+   &-subtitle
+      display: block
+      color: #8993ad
+      font-size: 14px
+      margin-bottom: 5px
+   &-textarea
+      width: 390px
+      height: 45px
+      border: 1px solid #ebebeb
+      background-color: #fcfcfc
+      outline: none
+      margin-bottom: 30px
+      resize: none
+      &__discription
+         height: 230px
+   &-button 
+      display: block
+      outline: none
+      background-color: #2174fd
+      padding: 20px 50px
+      color: #ffffff
+      font-size: 16px
+      &:hover
+         background-color: lighten(#2174fd, 5%)

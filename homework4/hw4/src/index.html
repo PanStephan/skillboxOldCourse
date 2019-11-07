@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Список дел</title>
+   <link rel="stylesheet" href="css/normalize.css">
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+   <section class="section">
+      <div class="section-block">
+         <ul class="list">
+            <h2 class="title list-title">Список дел:</h2>
+            <!-- /.list-title -->
+            <li class="list-item__empty">Список пуст</li>
+            <li class="list-item" id="list-item">
+               <span class="list-item__subtitle">Купить лошадь</span> 
+               <span class="list-item__delete" id="delete">&times;</span>
+               <span class="list-item__slide">&#9660;</span>
+               <hr>
+               <!-- /.list-item__subtitle -->
+               <span class="list-item__text">По цене 300 т.р. за штуку</span> 
+               <!-- /.list-item__text -->
+            </li>
+            <!-- /.list-item -->
+            <li class="list-item" id="list-item">
+               <span class="list-item__subtitle">Позвонить маме</span> 
+               <span class="list-item__delete" id="delete">&times;</span>
+               <span class="list-item__slide">&#9660;</span>
+               <hr>
+               <!-- /.list-item__subtitle -->
+               <span class="list-item__text">Пригласить в кино</span> 
+               <!-- /.list-item__text -->
+            </li>
+            <!-- /.list-item -->
+         </ul>
+         <!-- /.list -->
+         <form action="#" class="form">
+            <h2 class="title form-title">Добавить новое дело</h2>
+            <!-- /.form-title -->
+            <div class="form-block">
+               <span class="form-subtitle">* Название</span>
+               <!-- /.form-subtitle -->
+               <textarea type="text" class="form-textarea" id="name"></textarea>
+               <span class="form-subtitle">* Описание</span>
+               <!-- /.form-subtitle -->
+               <textarea type="text" class="form-textarea form-textarea__discription" id="discription"></textarea>
+               <button class="form-button" type="submit">Добавить дело</button>
+            </div>
+         </form>
+         <!-- /.form -->
+      </div>
+      <!-- /.list-block -->
+   </section>
+   <!-- /.section -->
+   <script src="js/jquery-3.3.1.min.js"></script>
+   <script>
+      $(function(){
+         $('.form-button').click(function(){
+            var new_task = $('#name').val();
+            var new_task1 = $('#discription').val();    
+         var task = $('<li class="list-item" id="list-item"><span class="list-item__subtitle">'+new_task+'</span><span class="list-item__delete" id="delete">&times;</span><span class="list-item__slide">&#9660;</span><hr><span class="list-item__text">'+new_task1+'</span></li>'); // мы создали элемент. Не разметку в виде строки, а готовый элемент, который находится в нашей переменной
+         $('.list').append(task); // добавляем на страницу
+         });
+         
+         $('body').on('click', '.list-item__delete', function(){
+	         $(this).parent().remove();
+         });
+         $('body').on('click', '.list-item__slide', function(){
+	         $(this).parent().find('.list-item__text').toggle('slow');
+            $(this).toggleClass('list-item__slide__active');
+         });
+
+         $("body").on('DOMSubtreeModified', ".list", function() {
+            ($('.list-item').length) == 0 ? $('.list-item__empty').addClass('list-item__empty__active') : $('.list-item__empty').removeClass('list-item__empty__active');
+         });
+   });
+   </script>
+</body>
+</html>

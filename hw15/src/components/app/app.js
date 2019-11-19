@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import RemoveComment from '../removeComment/removeComment'
+import AddComment from '../addComment/addComment'
 
 export default class App extends Component {
   constructor() {
@@ -45,7 +47,6 @@ removeComment(id) {
 }
 
 handleChange(e) {
-  console.log(e.target.name)
   this.setState({
     form: {
       ...this.state.form,
@@ -57,25 +58,8 @@ handleChange(e) {
 render() {
     return (
       <div className="App">
-        {this.state.comments.map(comment => <div key={comment.id}>
-          <span>{comment.id} - {new Date().toLocaleTimeString()}: </span>
-          <strong>{comment.name}, </strong>
-          <span>{comment.comment}</span>
-          <button onClick={this.removeComment.bind(null, comment.id)}>Удалить комментарий</button>
-        </div>)}
-        <div>
-          <label>Имя: <input
-            type="text"
-            value={this.state.form.name}
-            name="name"
-            onChange={this.handleChange} /></label>
-          <label>Комментарий: <textarea
-            name="comment"
-            value={this.state.form.comment}
-            onChange={this.handleChange}></textarea>
-          </label>
-          <button onClick={this.addComment}>Добавить комментарий</button>
-        </div>
+        <RemoveComment comments={this.state.comments} removeComment={this.removeComment}/>
+        <AddComment handleChange={this.handleChange} form={this.state.form} addComment={this.addComment}/>
       </div>
     )
   }

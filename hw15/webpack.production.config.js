@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = {
   entry: './src/index.js',
@@ -20,13 +19,6 @@ module.exports = {
   mode: 'development',
   module: {
     rules: [
-      {
-        test: /\.pug$/i,
-        use: {
-          loader: "pug-loader",
-          query: {}, 
-        }
-      },
       {
         test: /\.(sa|sc|c)ss$/, 
         use: [
@@ -66,12 +58,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.css',
     }),
-    new ImageminPlugin({
-      pngquant: {
-        quality: '95-100'
-      }
-    }),
     new MinifyPlugin(),
-    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.pug'})
+    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.html'})
   ]
 }

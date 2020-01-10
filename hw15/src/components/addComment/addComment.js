@@ -1,28 +1,26 @@
 import React from 'react'
 
-export default class AddComment extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+const AddComment = (props) => {
 
-  render() {
-    const{handleChange,form, addComment } = this.props
+  const{changeHandler, inputsValue, onAddComment } = props
 
-    return (
-      <div>
-        <label>Имя: <input
-          type="text"
-          value={form.name}
-          name="name"
-          onChange={handleChange} /></label>
-        <label>Комментарий: <textarea
-          name="comment"
-          value={form.comment}
-          onChange={handleChange}></textarea>
-        </label>
-        <button onClick={addComment}>Добавить комментарий</button>
-      </div>
-    )
-  }
-
+  return (
+    <>
+      <span>Имя:</span>
+      <input
+        type="text"
+        name="title"
+        value={inputsValue.title}
+        onChange={changeHandler} />
+      <span>Комментарий:</span>
+      <textarea
+        value={inputsValue.comment}
+        name="comment"
+        onChange={changeHandler}>
+        </textarea>
+      <button onClick={onAddComment}>Добавить комментарий</button>
+    </>
+  )
 }
+
+export default AddComment

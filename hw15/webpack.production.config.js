@@ -1,10 +1,9 @@
-/* eslint-disable */
-const path = require('path');
+const path = require('path')
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const MinifyPlugin = require("babel-minify-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const MinifyPlugin = require("babel-minify-webpack-plugin")
 
 module.exports = {
   entry: './src/index.js',
@@ -22,7 +21,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/, 
         use: [
-          MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'
+          MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
         ]
       },
       {
@@ -45,7 +44,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
